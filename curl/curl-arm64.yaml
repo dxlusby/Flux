@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: curl-arm64
+  namespace: default
+spec:
+  containers:
+  - command:
+    - tail
+    - -f
+    - /dev/null
+    image: curlimages/curl
+    name: curl
+  volumes:
+  nodeSelector:
+    kubernetes.io/arch: arm64
+    kubernetes.io/os: linux
