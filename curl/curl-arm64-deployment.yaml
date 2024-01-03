@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: curl-arm64
+  namespace: default
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: curl-arm64
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: curl-arm64
+    spec:
+      containers:
+      - command: ["tail", "-f", "/dev/null"]
+        image: curlimages/curl
+        name: curl
+      nodeSelector:
+        kubernetes.io/arch: arm64
+        kubernetes.io/os: linux

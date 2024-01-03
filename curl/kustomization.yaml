@@ -1,5 +1,7 @@
 apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 resources:
-- curl-amd64.yaml
-- curl-arm64.yaml
+- curl-amd64-pod.yaml
+- curl-amd64-deployment.yaml
+- curl-arm64-pod.yaml
+- curl-arm64-deployment.yaml
